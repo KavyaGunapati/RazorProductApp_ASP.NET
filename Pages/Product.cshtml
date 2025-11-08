@@ -1,0 +1,18 @@
+﻿@page
+@model RazorProductApp.Pages.ProductModel
+<h2>Add Product</h2>
+<form method="post">
+    <div>
+        <label>Name:</label>
+        <input asp-for="Name"/>
+    </div>
+    <div>
+        <label>Price:</label>
+        <input asp-for="Price"/>
+    </div>
+    <button type="submit">Add Product</button>
+</form>
+@if (Model.Message != null)
+{
+    <p style="color:green">@Model.Message</p>
+}
