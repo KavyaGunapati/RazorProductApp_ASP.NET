@@ -1,18 +1,27 @@
 ﻿@page
 @model RazorProductApp.Pages.ProductModel
+
 <h2>Add Product</h2>
+
 <form method="post">
     <div>
         <label>Name:</label>
-        <input asp-for="Name"/>
+        <input asp-for="Product.Name" />
+        <span asp-validation-for="Product.Name" style="color:red"></span>
     </div>
     <div>
         <label>Price:</label>
-        <input asp-for="Price"/>
+        <input asp-for="Product.Price" />
+        <span asp-validation-for="Product.Price" style="color:red"></span>
     </div>
-    <button type="submit">Add Product</button>
+    <button type="submit">Save</button>
 </form>
+
 @if (Model.Message != null)
 {
-    <p style="color:green">@Model.Message</p>
+    <p style="color: green">@Model.Message</p>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }
